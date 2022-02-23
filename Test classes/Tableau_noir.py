@@ -39,6 +39,13 @@ class tableau_noir:
     test_private=property(_get_test_private)
     test_private2=property(_get_test_private2,_set_test_private2)
 
+    def __getattr__(self, nom):
+        """Si Python ne trouve pas l'attribut nommé nom, il appelle
+        cette méthode. On affiche une alerte"""
+
+         
+        print("Alerte ! Il n'y a pas d'attribut {} ici !".format(nom))
+
 if __name__== "__main__" :
     tableau=tableau_noir()
     tableau.ecrire("Test ecriture tableau")
@@ -48,8 +55,10 @@ if __name__== "__main__" :
     tableau.lire()
     tableau.ecrire("Ecrire apres effacer")
     tableau.lire()
+    print(tableau)
+    tableau.test
     tableau._get_test_private()
     tableau.test_private
     tableau._set_test_private2("test")
-    tableau.test_private="strawberry"
+    #tableau.test_private="strawberry"
 
