@@ -1,6 +1,8 @@
 # coding=utf-8
 # Online Python - IDE, Editor, Compiler, Interpreter
+#Programme principal du jeu pendu
 
+#Importation de librairie
 from donnees import *
 from fonctions import *
 import pickle
@@ -63,7 +65,7 @@ else :
 
 
 
-#On envoie le score dans le fichier
+#On envoie le score dans le fichier et on l'affiche au joueur
 with open(nom_fichier, 'wb') as fichier: 
     mon_pickler = pickle.Pickler(fichier)
     mon_pickler.dump(score)

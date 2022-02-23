@@ -1,20 +1,23 @@
 # coding=utf-8
 # Online Python - IDE, Editor, Compiler, Interpreter
 
+#Importation des librairies utiles
 from random import randrange
 from math import ceil
 
-#Definition de variable utile
-Running=1    #Booleen verifiant si on continue a jouer ou pas
+#Définition de variables utiles
+Running=1    #Booléen vérifiant si on continue a jouer ou pas
 somme_possede=1000 # Somme possede au depart
 
 while Running :
+    #On affiche la somme possede au joueur pour qu'il mise
     print("Vous possedez {} $".format(somme_possede))
     mise=0
-    #On demande la mise jusqu'a ce que l'utilisateur tape une valeur attendue
+    #On demande la mise jusqu'a ce que l'utilisateur tape une valeur attendue par le programme
     while (mise<=0 or mise>somme_possede):
 
         mise=input("Quelle mise souhaitez vous mettre :")
+        #On regarde si on peut convertir en entier , s'il est dans l'intervalle attendu
         try : 
             mise=int(mise)
         except ValueError :
@@ -31,6 +34,7 @@ while Running :
         print("Choissisez votre nombre entre 0 et 49")  
       
         nombre_choisi=input()  
+        #On regarde si le nombre choisi est bien un int si il est dans l'intervalle attendu
         try : 
             nombre_choisi=int(nombre_choisi)
         except ValueError :
@@ -44,7 +48,7 @@ while Running :
     #On tire un nombre aléatoire     
     nombre_obtenu_roulette=randrange(50)
     print("Le nombre obtenu à la roulette est {}".format(nombre_obtenu_roulette))
-    #On regarde si on a le nombre exact ou la meme couleur ou si on a perdu
+    #On regarde si on a le nombre exact ou la meme couleur ou si on a perdu et on affiche un message correspondant
     if nombre_obtenu_roulette==nombre_choisi :
         mise_gagne=ceil(mise*3)
         somme_possede+=mise_gagne
@@ -68,6 +72,8 @@ while Running :
         test_sortie=input("Souhaitez vous continuer à jouer ? taper 1 pour continuer , 0 sinon")  
         if test_sortie==0 : 
             Running =0
+            #On affiche la somme qu'il possede en partant
+            print("Vous partez du casino avec {} $".format(somme_possede))
 
 
         

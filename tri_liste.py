@@ -1,6 +1,7 @@
 # coding=utf-8
 # Online Python - IDE, Editor, Compiler, Interpreter
 
+#definition de la liste
 inventaire = [
     ("pommes", 22),
     ("melons", 4),
