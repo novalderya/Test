@@ -69,8 +69,8 @@ while Running :
         Running=0
     else :
         #Si l'utilisateur tape autre chose que 0 il continue a jouer        
-        test_sortie=input("Souhaitez vous continuer à jouer ? taper 1 pour continuer , 0 sinon")  
-        if test_sortie==0 : 
+        test_sortie=input("Souhaitez vous continuer à jouer ? taper o pour continuer , n sinon ")  
+        if test_sortie=='n' : 
             Running =0
             #On affiche la somme qu'il possede en partant
             print("Vous partez du casino avec {} $".format(somme_possede))
