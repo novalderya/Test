@@ -60,14 +60,14 @@ else :
         #S'il n'existe pas on va le créer
         else : 
             score[nom_utilisateur]=nombre_d_essai_max - nombre_d_erreur
-        print("Rajout de fichier")
+
 
 
 #On envoie le score dans le fichier
 with open(nom_fichier, 'wb') as fichier: 
     mon_pickler = pickle.Pickler(fichier)
     mon_pickler.dump(score)
-    print("Creation de score")
+    print("Score actuel :")
     print(score)
 
     
